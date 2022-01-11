@@ -1,45 +1,69 @@
 # Applied Data Science: Personal Portfolio
-## By Leander Loomans
+#### By Leander Loomans
 Personal Portfolio for the minor Applied Data Science at The Hague University of Applied Sciences
 
-# DataCamp Course Completion
+## DataCamp Course
 I have completed 100% of the DataCamp course, as can be seen below:
 
 ![DataCamp Image](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp.png)
 
 It should be noted that I was familliar with Python before starting this minor, as it was taught during one of the classes in the first year of my major Software Engineering.
 
-# Reflection on Own Contribution to the Project
-## Situation
+## Reflection and Evaluation
 
-## Task
+### Reflection on Own Contribution to the Project
 
-## Action
- 
-## Result
+### Reflection on Own Learning Objectives
 
-## Reflection
+### Evaluation on the Group Project as a Whole
 
 
-# Reflection on Own Learning Objectives
-## Situation
+## Research Project
 
-## Task
+### Task Definition
 
-## Action
- 
-## Result
+### Evaluation
 
-## Reflection
+### Conclusions
+
+### Planning
 
 
-# Evaluation on the Group Project as a Whole
-## Situation
+                <!-- ## Predictive Analytics
 
-## Task
+                ### Selecting a Model
 
-## Action
- 
-## Result
+                ### Configuring a Model
 
-## Reflection
+                ### Training a Model
+
+                ### Evaluating a Model
+
+                ### Visualizing the Outcome of a Model
+
+
+                ## Domain Knowledge
+
+                ### Introduction of the Subject Field
+
+                ### Literature Research
+
+                ### Explanation of Terminology, Jargon and Definitions -->
+
+
+## Data Preprocessing
+
+### Data Exploration
+
+### Data Cleansing
+
+### Data Exploration
+
+### Data Visualization
+
+
+## Communication
+
+### Presentations
+
+### Writing Paper
