@@ -12,7 +12,7 @@ It should be noted that I was familliar with Python before starting this minor, 
 # Reflection on Own Contribution to the Project
 ## Situation
 
-## Taak
+## Task
 
 ## Action
  
@@ -24,7 +24,7 @@ It should be noted that I was familliar with Python before starting this minor, 
 # Reflection on Own Learning Objectives
 ## Situation
 
-## Taak
+## Task
 
 ## Action
  
@@ -36,7 +36,7 @@ It should be noted that I was familliar with Python before starting this minor, 
 # Evaluation on the Group Project as a Whole
 ## Situation
 
-## Taak
+## Task
 
 ## Action
  
