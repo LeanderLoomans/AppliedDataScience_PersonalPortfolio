@@ -1,12 +1,12 @@
 # Applied Data Science: Personal Portfolio
-Name: Leander Loomans
-Studentnumber: 21136769
-Course: Applied Data Science Minor
-Teachers: Jeroen Vuurens, Tony Andrioli, Ruud Vermeij
+Name: Leander Loomans <br />
+Studentnumber: 21136769 <br />
+Course: Applied Data Science Minor <br />
+Teachers: Jeroen Vuurens, Tony Andrioli, Ruud Vermeij <br />
 
 
 ## DataCamp Course
-Overall, the DataCamp courses proved to be very useful. They accompanied the lectures by Jeroen nicely, and provided a way to bring into practice what you were taught, even if your project was not yet ready for writing code. Then, when the project entered the coding phase, if felt as if I had a head start, because I had already fooled around with lots of the machine learning functions. I have completed 100% of the courses, as can be seen below.
+Overall, the DataCamp courses proved to be very useful. They accompanied the lectures by Jeroen and Tony nicely, and provided a way to bring into practice what you were taught, even if your project was not yet ready for writing code. Then, when the project entered the coding phase, it felt as if I had a head start, because I had already fooled around with lots of the machine learning functions. I have completed 100% of the courses, as can be seen below.
 
 <details><summary>DataCamp Completion</summary>
   
@@ -39,14 +39,33 @@ I was part of Team Dialogue during this minor. Team Dialogue is part of Smart Te
 On the whole, I believe that our group did very well. None of us had much (if any) experience with machine learning, and some of us had never even coded a program. I do wish, however, that I could restart the project with my current knowledge. I feel like I could do so much more now, and work so much faster than we did in the first weeks of the project. I also still have many ideas I would have liked to try, to further improve upon what we have. Improvements such as: changing the way we load data into the model, so that we can train on much bigger datasets. Or adding a third model to our final product, that can filter out noise from radio, tv or other sources that can be mistaken for speech. We could have improved our two existing models (detecting speech and comparing speakers) further, for example by adding more unique speakers to avoid overfitting on certain voices. I would have also liked to put more work into the combination of the models. Right now, the output is a percentage of speech present (by the first model) and how often the speaker changes (by the second model). But the second model can hypothetically also be used to give an estimation of how many unique speakers are in the audio, just by writing smarter code that compares more audio fragments than just two consecutive ones. Sadly though, there just wasn’t enough time. The fact that the best ideas came later in the project only shows that I learned so much, that I made a huge improvement over the course of this minor and that I learned many new skills, so I’m certainly happy with that.
 
 ### Conclusions
-The results we ultimately got on both our models are actually very impressive, especially for a group of first time data scientists. The first model (detecting speech in one MFCC) got an accuracy of 0.89, and the second model (detecting if it is the same speaker between two MFCCs) got an accuracy of 0.94. Both datasets were balanced 50/50 between true and false samples, so those scores really do mean that the models work. The chance of getting those scores with blind guesses is less than 0.000000000000013%. The confusion matrices for both models are shown below. 
+The results we ultimately got on both our models are actually very impressive, especially for a group of first time data scientists. The first model (detecting speech in one MFCC) got an accuracy of 0.89, and the second model (detecting if two MFCCs are the same or different speakers) got an accuracy of 0.94. Both datasets were balanced 50/50 between true and false samples, so those scores really do mean that the models work. The chance of getting those scores with blind guesses is less than 0.000000000000013%. The confusion matrices for both models are shown below. 
+  
+<details><summary>Confusion Matrices</summary>
+  
+![DataCamp Image 3](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_detection.png)
+  
+![DataCamp Image 4](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_comparison.png)
+  
+</details>
 
 When the two models are combined into the final product, the accuracies for the first and the second model are 0.88 and 0.85 respectively. With these results, we can give an answer to our research question, "How can data science techniques detect if there is a conversation between at least two people by analyzing audio files?". We got our results by training two CNNs, using one MFCC per 0.5 second of audio as input. For the final product, the audio to be analyzed is first split into 0.5 second fragments. Then, each fragment is converted to an MFCC. These are given to the first model to determine if there is speech present. If yes, it is passed on to the next model and compared to the previous MFCC. The second model then decides if the two MFCCs are by the same or a different speaker. This way the program will always work, no matter how many speakers there are, since it was never trained on a specific amount if unique speakers. With the outputs from the two models, the chances of a conversation present can be estimated.
 
   
 ### Planning
+At the beginning of the minor, we decided to use SCRUM for our planning. A sprint lasted 2 weeks, with daily stand-ups and a retrospective at the end. We put our planning on a scrum board on Taiga at the beginning of each sprint. This was done by the scrum master. We decided that everyone had to have some experience with planning, so each week someone else got to play the role of scrum master. It was my turn during the second sprint. I added the user stories to the scrum board and to each user story, a certain amount of points were assigned based on the amount of time it would take to complete. This allowed us to view our progress in the burn chart at the top of the board, and compare it to the ‘ideal completion rate’ baseline. Finally, the user stories were divided up into individual tasks that could be assigned to the group members. Everyone was responsible to keep their own tasks up to date, so that the rest of the group knew what everyone else was doing and what their progress status was. How the scrum board looked at the end of the sprint can be seen in the figures below.
+  
+<details><summary>Scrum Board Sprint 2</summary>
 
-<!details>
+Example of the scrum board of sprint 2
+![DataCamp Image 5](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Scrumboard.png)
+  
+Example of an unfolded user story
+![DataCamp Image 6](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Scrumboard_Userstory.png)
+  
+</details>
+  
+</details>
 
                 <!-- ## Predictive Analytics
 
