@@ -13,9 +13,9 @@ Overall, the DataCamp courses proved to be very useful. They accompanied the lec
 
 <details><summary>DataCamp Completion</summary>
   
-![Image 1](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 0.png)
+![Image 1](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp0.png)
   
-![Image 2](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 1.png)
+![Image 2](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp1.png)
   
 </details>
 
