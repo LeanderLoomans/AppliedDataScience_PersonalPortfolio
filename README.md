@@ -13,9 +13,9 @@ Overall, the DataCamp courses proved to be very useful. They accompanied the lec
 
 <details><summary>DataCamp Completion</summary>
   
-![DataCamp Image 0](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 0.png)
+![Image 1](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 0.png)
   
-![DataCamp Image 1](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 1.png)
+![Image 2](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 1.png)
   
 </details>
 
@@ -51,9 +51,9 @@ The results we ultimately got on both our models are actually very impressive, e
   
 <details><summary>Confusion Matrices</summary>
   
-![DataCamp Image 3](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_detection.png)
+![Image 3](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_detection.png)
   
-![DataCamp Image 4](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_comparison.png)
+![Image 4](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_comparison.png)
   
 </details>
 
@@ -66,10 +66,10 @@ At the beginning of the minor, we decided to use SCRUM for our planning. A sprin
 <details><summary>Scrum Board Sprint 2</summary>
 
 Example of the scrum board of sprint 2
-![DataCamp Image 5](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Scrumboard.png)
+![Image 5](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Scrumboard.png)
   
 Example of an unfolded user story
-![DataCamp Image 6](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Scrumboard_Userstory.png)
+![Image 6](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Scrumboard_Userstory.png)
   
 </details>
   
@@ -108,6 +108,21 @@ Example of an unfolded user story
 <details><summary>Show Content</summary>
 
 ### Data Exploration
+I found the three datasets that we ended up using by either searching on Google and Kaggle using keywords like ‘speech recognition’, ‘home environment’ or ‘voice activity’, or by following references to datasets in other research, similar to ours. In the case of AVA and CHIME-Home, the datasets were documented in their own papers. I used this to base my informative summaries on, which were used in our own research paper. These summaries are highlighted in the excerpt from our paper below. <br />
+
+<details><summary>Data Summaries in Paper</summary>
+  
+![Image 7](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataInfo.png)
+  
+</details>
+
+The LibriSpeech dataset, we needed analyze ourselves. For the script that generates datasets for the second model, it was important that the code never tries to exceed the number of speakers or the amount of files that a speaker has. For this purpose, I made the following visualization. <br />
+  
+<details><summary>Data Visualization LibriSpeech</summary>
+  
+![Image 7](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/Distribution_LibriSpeech.png)
+  
+</details>
 
 ### Data Cleansing
 For creating the testing audio for our final product, we needed speaker audio with the speaker ID as label, mixed with non-speaker audio of a household environment. The most suitable dataset we could find was called 'CHIME-Home', which contained speech and non-speech audio fragments. However, we could not use the speech fragments, since they were not labeled with who was speaking (only if it was an adult male, adult female or child) and there was not enough variation in the speech. I then decided to use the LibriSpeech dataset (which we had already found) for speech audio, and only use the non-speech audio from CHIME-Home. This meant I had to filter out all files containing speech from the dataset, which turned out to be more difficult than expected: instead of having been sorted into folders by label, or containing the label in the filename, each file has a unique string of numbers, for which the corresponding labels were described in a CSV file (one CSV per audiofragment!). So, in order to clean this dataset, I had to write a custom python script that read every audio file, opened the corresponding CSV file, read the label inside it and copy the audiofile to a corresponding labeled folder. This resulted in a folder with only audiofiles containing environmental noises and no speech, which was exactly what we needed. To verify that the data we separated was the correct audio, besides listening to the audio, I checked if the ratio between voice and non-voice audio corresponded with the ratio of labels described in the CHIME-Home documentation, which it did.
@@ -124,7 +139,7 @@ For our research paper, we needed to describe all of the datasets that our model
 
 
 ### Data Visualization
-A good eample of data visualization is a script I wrote about the AVA-Speech dataset. The code uses the same methods to create MFCCs per 0.5 second of resampled audio, as was used in every code to make the datasets. A random MFCC is visualized, along with a generated pie-chart showing the ratios between labels: ‘NO_SPEECH, CLEAN_SPEECH, SPEECH_WITH_NOISE, SPEECH_WITH_MUSIC’.
+A good eample of data visualization is a script I wrote about the AVA-Speech dataset. The code uses the same methods to create MFCCs per 0.5 second of resampled audio, as was used in every code to make the datasets. A random MFCC is visualized, along with a generated pie-chart showing the ratios between labels: ‘NO_SPEECH, CLEAN_SPEECH, SPEECH_WITH_NOISE, SPEECH_WITH_MUSIC’. These visualizations proved to be very useful for verification that the process went right, balancing the datasets in our favour, and to tailor the first layer of each of the networks to accept the input shape (40x44) without error.
 
 [The script can be found here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/DataVisualisation.ipynb)
 
@@ -140,4 +155,7 @@ I prepared and presented for internal presentations on 20/09/2021, 11/10/2021 an
 ### Writing Paper
 I started contributing a bit later on the research paper than some of my other group members. There was a moment, a week before Christmas, where we decided to stop trying to improve our product and we all should focus on the paper. Up until then I had only weighed in on the decision making. When I started writing, there was already a clearly defined structure for the document. However, once I did start writing, I wrote a lot of the text in the final version. I wrote the <i>Dataset</i>, <i>Testing Dataset</i>, <i>Data Preparation</i> and <i>Neural Networks</i> sections in <i>Methods</i>. I also wrote the second paragraph of <i>Results</i>, and the last three paragraphs of <i>Recommendation</i>. This comes down to 975 words, which is 23% of the total of 4212 words. This is more than the 1/6 average, since everyone from Team Dialogue participated in writing the paper. <br />
 Besides writing, I also gave detailed feedback to all other sections in the paper multiple times, and often joined in on discussions and decision making moments countless other times. In conclusion, I contributed above average to the final version of the paper. However, since some of my group members had started on the paper structure way before the rest joined, they have spent more time on it than I have in total.
+
+[The entire paper can be found here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/docs/AppliedDataScience_Paper_V1.pdf)
+
 </details>
