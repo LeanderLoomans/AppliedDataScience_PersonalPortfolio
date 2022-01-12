@@ -6,6 +6,9 @@ Teachers: Jeroen Vuurens, Tony Andrioli, Ruud Vermeij <br />
 
 
 ## DataCamp Course
+
+<details><summary>Show Content</summary>
+
 Overall, the DataCamp courses proved to be very useful. They accompanied the lectures by Jeroen and Tony nicely, and provided a way to bring into practice what you were taught, even if your project was not yet ready for writing code. Then, when the project entered the coding phase, it felt as if I had a head start, because I had already fooled around with lots of the machine learning functions. I have completed 100% of the courses, as can be seen below.
 
 <details><summary>DataCamp Completion</summary>
@@ -18,7 +21,11 @@ Overall, the DataCamp courses proved to be very useful. They accompanied the lec
 
 It should be noted that I was familliar with Python before starting this minor, as it was taught during one of the classes in the first year of my major Software Engineering.
 
+</details>
+  
 ## Reflection and Evaluation
+
+<details><summary>Show Content</summary>
 
 ### Reflection on Own Contribution to the Project
 At the beginning of the minor, 
@@ -27,6 +34,7 @@ At the beginning of the minor,
 
 ### Evaluation on the Group Project as a Whole
 
+</details>
 
 ## Research Project
 
@@ -39,7 +47,7 @@ I was part of Team Dialogue during this minor. Team Dialogue is part of Smart Te
 On the whole, I believe that our group did very well. None of us had much (if any) experience with machine learning, and some of us had never even coded a program. I do wish, however, that I could restart the project with my current knowledge. I feel like I could do so much more now, and work so much faster than we did in the first weeks of the project. I also still have many ideas I would have liked to try, to further improve upon what we have. Improvements such as: changing the way we load data into the model, so that we can train on much bigger datasets. Or adding a third model to our final product, that can filter out noise from radio, tv or other sources that can be mistaken for speech. We could have improved our two existing models (detecting speech and comparing speakers) further, for example by adding more unique speakers to avoid overfitting on certain voices. I would have also liked to put more work into the combination of the models. Right now, the output is a percentage of speech present (by the first model) and how often the speaker changes (by the second model). But the second model can hypothetically also be used to give an estimation of how many unique speakers are in the audio, just by writing smarter code that compares more audio fragments than just two consecutive ones. Sadly though, there just wasn’t enough time. The fact that the best ideas came later in the project only shows that I learned so much, that I made a huge improvement over the course of this minor and that I learned many new skills, so I’m certainly happy with that.
 
 ### Conclusions
-The results we ultimately got on both our models are actually very impressive, especially for a group of first time data scientists. The first model (detecting speech in one MFCC) got an accuracy of 0.89, and the second model (detecting if two MFCCs are the same or different speakers) got an accuracy of 0.94. Both datasets were balanced 50/50 between true and false samples, so those scores really do mean that the models work. The chance of getting those scores with blind guesses is less than 0.000000000000013%. The confusion matrices for both models are shown below. 
+The results we ultimately got on both our models are actually very impressive, especially for a group of first time data scientists. The first model (detecting speech in one MFCC) got an accuracy of 0.89, and the second model (detecting if two MFCCs are the same or different speakers) got an accuracy of 0.94. Both datasets were balanced 50/50 between <i>true</i> and <i>false</i> samples, so those scores really do mean that the models work. The chance of getting those scores with blind guesses is less than 0.000000000000013%. The confusion matrices for both models are shown below. 
   
 <details><summary>Confusion Matrices</summary>
   
@@ -67,60 +75,69 @@ Example of an unfolded user story
   
 </details>
 
-                <!-- ## Predictive Analytics
+## Predictive Analytics
 
-                ### Selecting a Model
+<details><summary>Show Content</summary>
 
-                ### Configuring a Model
+### Selecting a Model
 
-                ### Training a Model
+### Configuring a Model
 
-                ### Evaluating a Model
+### Training a Model
 
-                ### Visualizing the Outcome of a Model
+### Evaluating a Model
 
+### Visualizing the Outcome of a Model
 
-                ## Domain Knowledge
+</details>
+  
+## Domain Knowledge
 
-                ### Introduction of the Subject Field
+<details><summary>Show Content</summary>
 
-                ### Literature Research
+### Introduction of the Subject Field
 
-                ### Explanation of Terminology, Jargon and Definitions -->
+### Literature Research
 
+### Explanation of Terminology, Jargon and Definitions
+
+</details>
 
 ## Data Preprocessing
+
+<details><summary>Show Content</summary>
 
 ### Data Exploration
 
 ### Data Cleansing
-
 For creating the testing audio for our final product, we needed speaker audio with the speaker ID as label, mixed with non-speaker audio of a household environment. The most suitable dataset we could find was called 'CHIME-Home', which contained speech and non-speech audio fragments. However, we could not use the speech fragments, since they were not labeled with who was speaking (only if it was an adult male, adult female or child) and there was not enough variation in the speech. I then decided to use the LibriSpeech dataset (which we had already found) for speech audio, and only use the non-speech audio from CHIME-Home. This meant I had to filter out all files containing speech from the dataset, which turned out to be more difficult than expected: instead of having been sorted into folders by label, or containing the label in the filename, each file has a unique string of numbers, for which the corresponding labels were described in a CSV file (one CSV per audiofragment!). So, in order to clean this dataset, I had to write a custom python script that read every audio file, opened the corresponding CSV file, read the label inside it and copy the audiofile to a corresponding labeled folder. This resulted in a folder with only audiofiles containing environmental noises and no speech, which was exactly what we needed. To verify that the data we separated was the correct audio, besides listening to the audio, I checked if the ratio between voice and non-voice audio corresponded with the ratio of labels described in the CHIME-Home documentation, which it did.
 
 [The script can be found here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/Chime-Home%20Dataset%20Separator.ipynb)
 
 ### Data Preparation
-
-The dataset for our second model has to predict whether two speech audio fragments are by the same speaker or by a different speaker. I wrote a script that generates a custom dataset based on the LibriSpeech dataset. The audio files from this set are all in one folder, and have the speaker ID in the filename. The script first allows the user to set two parameters: the amount of different speakers you want to include in the dataset (with a maximum of 251, which is the amount of speaker IDs in the dataset), and how many combinations you want to generate for each speaker. For example, when this is set to 10 combinations, the script will generate 10 combination samples where one speaker is paired with themselves, plus 10 combinations where the speaker is paired with random samples by 10 other speakers. The script separates the audio into 0.5 second fragments: the interval we chose for the model to analyze. This audio fragment is resampled to 44.1kHz to ensure homogeneity over all audio used. It then creates an MFCC of 40x44 for each audio fragment. The script also keeps track of what the labels should be: True for combinations from the same speaker and False for combinations by different speakers. The output is three .npy files: a list of MFCCs by the first audio fragment of the combinations, the MFCCs of the second fragment in the combination, and a list of all corresponding labels. 
+The dataset for our second model has to predict whether two speech audio fragments are by the same speaker or by a different speaker. I wrote a script that generates a custom dataset based on the LibriSpeech dataset. The audio files from this set are all in one folder, and have the speaker ID in the filename. The script first allows the user to set two parameters: the amount of different speakers you want to include in the dataset (with a maximum of 251, which is the amount of speaker IDs in the dataset), and how many combinations you want to generate for each speaker. For example, when this is set to 10 combinations, the script will generate 10 combination samples where one speaker is paired with themselves, plus 10 combinations where the speaker is paired with random samples by 10 other speakers. The script separates the audio into 0.5 second fragments: the interval we chose for the model to analyze. This audio fragment is resampled to 44.1kHz to ensure homogeneity over all audio used. It then creates an MFCC of 40x44 for each audio fragment. The script also keeps track of what the labels should be: <i>true</i> for combinations from the same speaker and <i>false</i> for combinations by different speakers. The output is three .npy files: a list of MFCCs by the first audio fragment of the combinations, the MFCCs of the second fragment in the combination, and a list of all corresponding labels. 
 
 [The script can be found here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/SpeakerCombiGeneratorEnhanced.ipynb)
 
 ### Data Explanation
-
 For our research paper, we needed to describe all of the datasets that our models use: AVA-Speech, CHIME-Home and LibriSpeech. I wrote these sections in the ‘Dataset’ and ‘Testing Datasets’ subsections in Methods. These bullet point descriptions (and TABLE I) serve as a quick overview for readers to see what we look for in a dataset for this project, as well as ensuring that, should our research be repeated, the same datasets are used in the same composition we did.
 
 
 ### Data Visualization
-
 A good eample of data visualization is a script I wrote about the AVA-Speech dataset. The code uses the same methods to create MFCCs per 0.5 second of resampled audio, as was used in every code to make the datasets. A random MFCC is visualized, along with a generated pie-chart showing the ratios between labels: ‘NO_SPEECH, CLEAN_SPEECH, SPEECH_WITH_NOISE, SPEECH_WITH_MUSIC’.
 
 [The script can be found here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/DataVisualisation.ipynb)
 
+</details>
 
 ## Communication
 
-### Presentations
+<details><summary>Show Content</summary>
 
-I prepared and presented for internal presentations on 20/09/2021, 11/10/2021 and 22/11/2021, and did an external presentation on 08/10/2021
+### Presentations
+I prepared and presented for internal presentations on 20/09/2021, 11/10/2021 and 22/11/2021. This was always together with one other group member, except for the first presentation, which we did with the whole group. I also helped prepare and give the external presentation on 08/10/2021.
 
 ### Writing Paper
+I started contributing a bit later on the research paper than some of my other group members. There was a moment, a week before Christmas, where we decided to stop trying to improve our product and we all should focus on the paper. Up until then I had only weighed in on the decision making. When I started writing, there was already a clearly defined structure for the document. However, once I did start writing, I wrote a lot of the text in the final version. I wrote the <i>Dataset</i>, <i>Testing Dataset</i>, <i>Data Preparation</i> and <i>Neural Networks</i> sections in <i>Methods</i>. I also wrote the second paragraph of <i>Results</i>, and the last three paragraphs of <i>Recommendation</i>. This comes down to 975 words, which is 23% of the total of 4212 words. This is more than the 1/6 average, since everyone from Team Dialogue participated in writing the paper. <br />
+Besides writing, I also gave detailed feedback to all other sections in the paper multiple times, and often joined in on discussions and decision making moments countless other times. In conclusion, I contributed above average to the final version of the paper. However, since some of my group members had started on the paper structure way before the rest joined, they have spent more time on it than I have in total.
+</details>
