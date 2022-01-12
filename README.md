@@ -9,9 +9,11 @@ Teachers: Jeroen Vuurens, Tony Andrioli, Ruud Vermeij
 Overall, the DataCamp courses proved to be very useful. They accompanied the lectures by Jeroen nicely, and provided a way to bring into practice what you were taught, even if your project was not yet ready for writing code. Then, when the project entered the coding phase, if felt as if I had a head start, because I had already fooled around with lots of the machine learning functions. I have completed 100% of the courses, as can be seen below.
 
 <details><summary>DataCamp Completion</summary>
+  
 ![DataCamp Image 0](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 0.png)
   
 ![DataCamp Image 1](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/DataCamp 1.png)
+  
 </details>
 
 It should be noted that I was familliar with Python before starting this minor, as it was taught during one of the classes in the first year of my major Software Engineering.
@@ -27,6 +29,7 @@ At the beginning of the minor,
 
 
 ## Research Project
+
 <details><summary>Show Content</summary>
   
 ### Task Definition
@@ -42,7 +45,6 @@ When the two models are combined into the final product, the accuracies for the 
 
   
 ### Planning
-
 
 <!details>
 
