@@ -1,9 +1,8 @@
 # Applied Data Science: Personal Portfolio
-Name: Leander Loomans <br />
-Studentnumber: 21136769 <br />
-Course: Applied Data Science Minor <br />
-Teachers: Jeroen Vuurens, Tony Andrioli, Ruud Vermeij <br />
-
+<b>Name</b>: Leander Loomans <br />
+<b>Studentnumber</b>: 21136769 <br />
+<b>Course</b>: Applied Data Science Minor <br />
+<b>Teachers</b>: Jeroen Vuurens, Tony Andrioli, Ruud Vermeij <br />
 
 ## DataCamp Course
 
@@ -19,7 +18,7 @@ Overall, the DataCamp courses proved to be very useful. They accompanied the lec
   
 </details>
 
-It should be noted that I was familliar with Python before starting this minor, as it was taught during one of the classes in the first year of my major Software Engineering.
+It should be noted that I was somewhat familliar with Python before starting this minor, as it was taught during one of the classes in the first year of my major Software Engineering.
 
 </details>
   
@@ -106,7 +105,6 @@ The results we ultimately got on both our models are actually very impressive, e
 
 When the two models are combined into the final product, the accuracies for the first and the second model are 0.88 and 0.85 respectively. With these results, we can give an answer to our research question, "How can data science techniques detect if there is a conversation between at least two people by analyzing audio files?". We got our results by training two CNNs, using one MFCC per 0.5 second of audio as input. For the final product, the audio to be analyzed is first split into 0.5 second fragments. Then, each fragment is converted to an MFCC. These are given to the first model to determine if there is speech present. If yes, it is passed on to the next model and compared to the previous MFCC. The second model then decides if the two MFCCs are by the same or a different speaker. This way the program will always work, no matter how many speakers there are, since it was never trained on a specific amount if unique speakers. With the outputs from the two models, the chances of a conversation present can be estimated.
 
-  
 ### Planning
 At the beginning of the minor, we decided to use SCRUM for our planning. A sprint lasted 2 weeks, with daily stand-ups and a retrospective at the end. We put our planning on a scrum board on Taiga at the beginning of each sprint. This was done by the scrum master. We decided that everyone had to have some experience with planning, so each week someone else got to play the role of scrum master. It was my turn during the second sprint. I added the user stories to the scrum board and to each user story, a certain amount of points were assigned based on the amount of time it would take to complete. This allowed us to view our progress in the burn chart at the top of the board, and compare it to the ‘ideal completion rate’ baseline. Finally, the user stories were divided up into individual tasks that could be assigned to the group members. Everyone was responsible to keep their own tasks up to date, so that the rest of the group knew what everyone else was doing and what their progress status was. How the scrum board looked at the end of the sprint can be seen in the figures below.
   
@@ -120,34 +118,6 @@ Example of an unfolded user story
   
 </details>
   
-</details>
-
-## Predictive Analytics
-
-<details><summary>Show Content</summary>
-
-### Selecting a Model
-
-### Configuring a Model
-
-### Training a Model
-
-### Evaluating a Model
-
-### Visualizing the Outcome of a Model
-
-</details>
-  
-## Domain Knowledge
-
-<details><summary>Show Content</summary>
-
-### Introduction of the Subject Field
-
-### Literature Research
-
-### Explanation of Terminology, Jargon and Definitions
-
 </details>
 
 ## Data Preprocessing
