@@ -25,9 +25,8 @@ It should be noted that I was familliar with Python before starting this minor, 
   
 ## Reflection and Evaluation
 
-<details><summary>Show Content</summary>
+<details><summary>Reflection on Own Contribution to the Project</summary>
 
-### Reflection on Own Contribution to the Project
 #### Situation
 At the beginning of the minor, I chose to be part of the Dialogue team, along with 5 other students. I chose this project, because the detection of social interaction seemed like an incredibly interesting and versatile subject, that could also be deployed in many other situations than just in the context of the Smart Teddy project. I never regretted my decision for a second, also because I had a great group to work with. I thought the lectures by Jeroen and Tony were very useful and always relevant to our current objectives in the project. We used Scrum with two week sprints and daily stand-ups to guide our process to the right direction, which was always a nice support to have. 
 
@@ -39,15 +38,36 @@ For the dataset provision for the neural networks, I started by looking for exis
 At one point we also switched from using generated images to using the raw MFCC data, following critical questions during one of the external presentations. We used images because we had initially misunderstood what Jeroen and Tony tried to explain to us, and I had had my doubts about this ‘back and forth’ translating of the data, but didn’t share this with the group because we did get promising results from the networks. I later regretted not sharing my thoughts, because then we might have gotten better results earlier.
 
 #### Result
-The results of my work are Jupyter Notebooks which generate datasets from audio, to train our two neural networks with and to test our final product on. I am pleased with these generator-algorithms. They are written to be very flexible and can be adjusted to produce different kinds of datasets, often by adjusting just a couple of global variables or changing out a single line of code. I also optimized my dataset generators to be as fast as I could get them. An example of this is The [Speaker Combi Generator](), which first took hours to run, and after optimization only took seconds. This enabled us to switch back and forth rapidly between generating and training, allowing us to make quick adjustments and learn about what worked and what didn’t. I tried to put in comments to clarify the inner workings for the others, but I could definitely have documented my code better, so that’s something I want to improve in the future.
+The results of my work are Jupyter Notebooks which generate datasets from audio, to train our two neural networks with and to test our final product on. I am pleased with these generator-algorithms. They are written to be very flexible and can be adjusted to produce different kinds of datasets, often by adjusting just a couple of global variables or changing out a single line of code. I also optimized my dataset generators to be as fast as I could get them. An example of this is The [Speaker Combi Generator](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/SpeakerCombiGeneratorEnhanced.ipynb), which first took hours to run, and after optimization only took seconds. This enabled us to switch back and forth rapidly between generating and training, allowing us to make quick adjustments and learn about what worked and what didn’t. I tried to put in comments to clarify the inner workings for the others, but I could definitely have documented my code better, so that’s something I want to improve in the future.
 
 #### Reflection
 I think I was able to provide a valuable contribution to my team. Overall, I was very active in the devising and discussing of ideas, making plans, dividing tasks and working on our results. As mentioned above, there are some things I would like to improve myself in. If I have doubts, I shouldn’t keep them for myself. Also, I should keep others more informed of my work. I think my team always knew what I was working on, in part thanks to the scrum board. But I doubt anyone else can describe in detail how the dataset generators work. On the other hand, software engineering wasn’t really part of the learning objectives of this minor anyway. Something I think I did do well, was providing a positive mental attitude in the group. I always actively tried to keep the mood up and diffusing tense situations with a joke. I was always able to get the rest to go along with it, so we ended up having a great time during this minor.
+  
+</details>
 
-### Reflection on Own Learning Objectives
+<details><summary>Reflection on Own Learning Objectives</summary>
+  
+#### Situation
+What I wanted out of this minor, primarily, was to learn how to make predictive models. I had no prior knowledge or experience with machine learning, and hardly any experience with data science as a whole. The only experience I had was plotting some graphs in python in my first year of Software Engineering. However, I was aware of the possibilities of machine learning. I had seen what is possible on the news and on the internet, and I liked that so much that I wanted to be able to do all those awesome things for myself. 
 
-### Evaluation on the Group Project as a Whole
+#### Task
+At the beginning of the minor I set some goals for myself. I made a list of what I wanted to learn over the course of this minor. First of all, I wanted to learn how to create functioning machine learning models. Second, I wanted to learn how to select and process data for these models to train on. Third, I wanted to gain experience in performing a good research and writing a paper. Fourth and finally, I wanted to gain experience in working for a project that was bigger than my study. 
 
+#### Action
+The way I wanted to achieve my first and second learning objectives, was by taking tasks upon myself that involved me in writing code. I did this by assigning my name to those tasks on the scrum board. My third learning objective, I worked on by studying lots of other research that was about similar projects to our own. This, together with the workshop by Tony and feedback from him and Jeroen, taught me a lot. For my fourth learning objective I tried my best to be proactive during the meetings with Hani, our problem owner. I often proposed to my team to prepare together for the meeting by writing down all the questions that we had, and topics that we wanted to discuss with him. This helped us a lot in the way we presented our selves from a professional point of view.
+
+#### Result
+I created a couple of machine learning models myself: in the first few weeks I made a model that was able to, to a certain degree, predict which character said a quote in South Park. Later, during the hackathon, I created a random forest classifier which had the best results of our group, and would have been the second best of the whole class if I had gotten around to using the right dataset to test on. Furthermore, I even have a good grasp of how neural networks function and how to create/tweak them, from working together with Olaf on our convolutional neural networks. For my last learning objective, at the time of writing this evaluation we haven’t given our final presentation for Hani yet so I have no feedback from him as result. However, the result that I do have is that I experienced how motivating it is to work on something bigger than yourself. Because of that motivation, I pushed myself to perform better than just aiming for a passing grade, because our project actually matters. This was a very nice feeling to have while working on the project. 
+
+#### Reflection
+Having improved in all my learning objectives, I feel very good about my progress in this project. Not only did I learn new skills about the set objectives, there were also fields I gained knowledge in that I could not have foreseen, like how audiodata is stored or what an MFCC is and how they are made, which I am very pleased with. Now that I know how much more there is to learn, I really want to continue improving myself in the field of machine learning after this minor.
+
+</details>
+
+<details><summary>Evaluation on the Group Project as a Whole</summary>
+  
+temp
+  
 </details>
 
 ## Research Project
