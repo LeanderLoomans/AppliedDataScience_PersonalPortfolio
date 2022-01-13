@@ -66,7 +66,20 @@ Having improved in all my learning objectives, I feel very good about my progres
 
 <details><summary>Evaluation on the Group Project as a Whole</summary>
   
-temp
+#### Situation
+My fellow students have many different backgrounds and skillsets. From the first day there were great vibes in the team. Since Björn is from Sweden, we spoke English most of the time. This didn’t bother anyone. If anything it made things a bit easier, since most of the terminology of the subject matter was in English anyway. Everyone was motivated to deliver a good result and was prepared to put in the work for it. I always felt like I could trust people to keep their word. Honestly, I could not have asked for a better team.
+
+#### Task
+One of the things we had to figure out in this team, was how to make use of everyone’s unique skills. For the software engineers this was pretty straightforward, but for the others, we had to figure it out as we went along, which we certainly did. To give an example, Olaf’s major is electrical engineering. But we were able to greatly benefit from his knowledge, because he had experience with analyzing and processing audio signals. He was able to explain to us what we needed to know, so the rest of us could get started. Likewise, everyone was able to bring a unique value to the table.
+
+#### Action
+The way we kept our group project organized, was with the help of scrum. We used a scrum board to keep track of what everyone was working on, and held daily stand-ups to share what we learned or ask for advise on how to move forward. Also, to keep everyone on the same page with regard to our views on the bigger picture of course. Finally, to give each other feedback on the process and our functioning as a team in general, we held a retrospective at the end of each sprint. These were always useful, and everyone participated seriously. We had a rule that you have to say at least one point of improvement because otherwise someone might feel awkward critiquing somebody they hardly know. This worked very well. Feedback was always given respectfully and received with dignity, as should be the case in a healthy work environment.
+
+#### Result
+I have participated in many group projects during my study, and I have to say things rarely go as smoothly as they did within our group. Communication was great, there were no heavy discussions, or in fact any negative energy in the group at all. Also, everyone was very motivated to finish their tasks, and to help others finish theirs. Without having received any results from our paper or individual test scores, I would say everybody also got to work on their learning objectives. All of us working until late in the evening on our research paper, giving feedback on each other’s writing and proof reading over and over again was another example of our great team spirit.
+
+#### Reflection
+Participating in Team Dialogue was a great experience. There was a good balance between being productive and getting things done, bonding over lunch, exchanging cultural differences and similarities with our pet Swede, and the mandatory things like (bi-)weekly meetings, lectures and workshops. Our amazing results are definitely derivative from our positive mental attitude and collective motivation. We are even going to try to get our paper published, which would be out of the question had everyone not put so much effort into it.
   
 </details>
 
