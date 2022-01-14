@@ -120,6 +120,44 @@ Example of an unfolded user story
   
 </details>
 
+## Predictive Analytics
+
+<details><summary>Show Content</summary>
+
+### Selecting a Model
+To decide which model would be best suited for our purposes, we relied on research that had already been done on this subject. There was a lot of material to be found online in the context of audio/speech analysis, and almost all of the ones that worked with MFCCs, like us, combined it with CNNs. There were two papers we kept coming back to, and used as baselines for our own model. The model in [this paper]( https://arxiv.org/pdf/2103.03529.pdf) was used as baseline for our speech detection model, whilst the model from [this paper]( https://arxiv.org/pdf/1803.05427.pdf) served as baseline and overall example for the architecture of our speaker differentiation model.
+
+### Configuring a Model
+Most of the configuring of both models was done by Olaf. However, I was usually there to assist him. Primarily to keep providing datasets to train on, but I was also able to give some input here and there, just like he was able to give input on my dataset generators. An example of valuable input, is that I proposed to imitate the structure of shrinking kernel size from [this paper]( https://arxiv.org/pdf/1803.05427.pdf), going from 7x7 to 5x5 and ending on 3x3, for the convolution layers. We later found out from [this paper](https://www.sciencedirect.com/science/article/abs/pii/S0026269218307055) that this concept was called the ‘convolution kernel shrinking strategy’. Using this configuration improved our accuracy a bit, but not a whole lot, because Olaf already had quite a nice architecture for the model. The final configuration we used for our model can be found [here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/CNN_Voice_comparison_sr44khz.ipynb)
+
+### Training a Model
+From the dataset side, I was able make overfitting less likely by increasing the dataset size when our model did overfit, and ensuring the generated datasets contained a wide variety of different voices (male, female, differet speaker IDs), and for the <i>false</i> samples, ensuring that there were as many different kinds of non-speech noises as possible. For example, not only sounds of a phone ringing, since the model might actually train to recognize phones instead of voices. In the network, we also configured a few measures to counteract overfitting (or underfitting for that matter), like tuning the batch size. During training, we printed the train and validation scores, with their respective loss, to manually check for overfitting: if the training accuracy kept ketting higher, while the validation score stayed stable or went down, the model had started overfitting. Likewise, if the training loss kept getting lower, while the validation loss stayed the same or went up, the model had started overfitting.
+All this can be seen in [our model here](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/code/CNN_Voice_YesNo_v4.ipynb)
+
+### Evaluating a Model
+To evaluate our models, we used a testset that was kept separate from the rest of the data before training, to ensure that we didn’t test on any of the same data the models were trained on. The result accuracy we got, could be compared with our baseline model from the above mentioned papers. There was some difference in result, but not a whole lot. Their [voice activity detection model]( https://arxiv.org/pdf/2103.03529.pdf), for example, got a test accuracy of 91.8%, whereas our model’s test accuracy was 88%. I think the difference is in the way the data is processed. Our model uses audio files that are split into 0.5 second fragments, while their model uses the whole audio file (about 3 seconds on average). This can be beneficial for two reasons: more features to analyze can give the model more certainty in its predictions, and our data could contain a small amount of fragments with little to no voice in it, if it was incidentally split right in a pause between two words for example. More testing was required to check this, for which we sadly had no time left.
+
+### Visualizing the Outcome of a Model
+To give a quick insight in the performance of our models, we visualized the outcome in a confusion matrix. This is a good way to make (boolean) classification understandable. Confusion Matrices were made for the validation, as well as the testing scores. These matrices can be seen below.
+
+<br />Speech Detection: Confusion Matrix Validation
+
+![Confusion 1](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_detection_val.png)
+
+<br /> Speech Detection: Confusion Matrix Testing
+
+![Confusion 2](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_detection_test.png)
+
+<br />Speaker Differentiation: Confusion Matrix Validation
+
+![Confusion 3](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_comparison_val.png)
+
+<br /> Speaker Differentiation: Confusion Matrix Testing
+
+![Confusion 4](https://github.com/LeanderLoomans/AppliedDataScience_PersonalPortfolio/blob/main/images/confusion_matrix_voice_comparison_test.png)
+
+</details>
+
 ## Data Preprocessing
 
 <details><summary>Show Content</summary>
